@@ -5,9 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build-docs": "webpack --mode production",
-    "build-lib": "babel src/lib -d lib",
-    "build": "npm run build-docs && npm run build-lib",
+    "build": "webpack --config ./webpack.config.js --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs"
   },
@@ -21,7 +19,6 @@
     "react-dom": "^15.3.0 || ^16.2.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
