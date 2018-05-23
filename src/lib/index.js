@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.css';
 
+const pos = {
+  'top': styles.top,
+  'bottom': styles.bottom,
+  'right': styles.right,
+  'left': styles.left
+}
+
 class Tooltip extends Component {
   constructor(props) {
     super(props);
@@ -13,53 +20,64 @@ class Tooltip extends Component {
 
     this.show = this.show.bind(this);
     this.hide = this.hide.bind(this);
+
+    this.click = this.click.bind(this);
+    this.hoverOn = this.hoverOn.bind(this);
+    this.hoverOff = this.hoverOff.bind(this);
   }
 
-  show() {
-    const { type, delayHide } = this.props;
+  click() {
+    const { delayHide } = this.props;
+    this.show(() => {
 
+      if (delayHide) setTimeout(this.hide, delayHide);
+
+    })
+  }
+
+  hoverOn() {
+    if (this.timeout) clearTimeout(this.timeout);
+    this.show();
+  }
+
+  hoverOff() {
+    const { delayHide } = this.props;
+    if (!delayHide) return this.hide();
+
+    this.timeout = setTimeout(this.hide, delayHide);
+  }
+
+  show(cb = () => {}) {
     this.setState({
       visible: true
     }, () => {
-      if (type === 'click' && delayHide) {
-        setTimeout(this.hide, delayHide)
-      }
+      cb();
     });
   }
 
   hide() {
-    const { type, delayHide } = this.props;
-
-    if (type === 'hover' && delayHide) {
-      setTimeout(() => {
-        this.setState({
-          visible: false
-        })
-      }, delayHide)
-    } else {
-      this.setState({
-        visible: false
-      })
-    }
+    this.setState({
+      visible: false
+    })
   }
 
   render() {
-    const { props, state, show, hide } = this;
+    const { props, state, click, hoverOn, hoverOff } = this;
     const { type } = props;
 
     return (
       <div
         className={styles.tooltip}
-        onClick={(type === 'click') ? () => show() : null}
-        onMouseEnter={(type === 'hover' ? () => show() : null)}
-        onMouseLeave={(type === 'hover' ? () => hide() : null)}
+        onClick={(type === 'click') ? () => click() : null}
+        onMouseEnter={(type === 'hover' ? () => hoverOn() : null)}
+        onMouseLeave={(type === 'hover' ? () => hoverOff() : null)}
       >
 
         {props.children}
 
         {
           state.visible &&
-          <span className={`${styles.tooltipText} ${styles.top}`}>{props.content}</span>
+          <span className={`${styles.tooltipText} ${pos[props.pos]}`}>{props.content}</span>
         }
       </div>
     )

@@ -37,10 +37,10 @@
 
 .bottom {
   width: 120px;
-  bottom: 100%;
+  top: 100%;
   left: 50%;
   margin-left: -60px; /* Use half of the width (120/2 = 60); to center the tooltip */
-};
+}
 
 .bottom::after {
   content: " ";
@@ -56,9 +56,31 @@
 .left {
   top: -5px;
   right: 105%
-};
+}
+
+.left::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
 
 .right {
   top: -5px;
   left: 105%
+}
+
+.right::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
 }

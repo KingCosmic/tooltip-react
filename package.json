@@ -1,7 +1,7 @@
 {
-  "name": "react-component-example-project",
+  "name": "cosmic-tooltip",
   "version": "0.1.0",
-  "description": "A minimal boilerplate for building a react component for npm, including a demo page.",
+  "description": "Component for easily showing customizable tooltips",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
@@ -9,7 +9,10 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "tooltip"
+  ],
   "license": "MIT",
   "peerDependencies": {
     "react": "^15.3.0 || ^16.2.0",
@@ -32,7 +35,6 @@
   },
   "author": "KingCosmic <KingCosmicDev@gmail.com>",
   "dependencies": {
-    "prop-types": "^15.6.1",
-    "radium": "^0.24.0"
+    "prop-types": "^15.6.1"
   }
 }
