@@ -2,7 +2,7 @@
   "name": "kc-tooltip",
   "version": "0.1.2",
   "description": "Component for easily showing customizable tooltips",
-  "main": "src/lib/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production",
