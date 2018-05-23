@@ -1,5 +1,5 @@
 {
-  "name": "cosmic-tooltip",
+  "name": "kc-tooltip",
   "version": "0.1.0",
   "description": "Component for easily showing customizable tooltips",
   "main": "lib/index.js",
