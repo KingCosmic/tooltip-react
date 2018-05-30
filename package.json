@@ -4,8 +4,10 @@
   "description": "Component for easily showing customizable tooltips",
   "main": "lib/index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --config ./webpack.config.js --mode production",
+    "start": "parcel src/docs/index.html -d docs",
+    "build-docs": "parcel build src/docs/index.html -d docs",
+    "build-lib": "parcel build src/lib/index.js -d lib",
+    "build": "npm run build-docs && npm run build-lib",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs"
   },
@@ -19,20 +21,10 @@
     "react-dom": "^15.3.0 || ^16.2.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
     "gh-pages": "^1.1.0",
-    "html-webpack-plugin": "^3.2.0",
+    "parcel-bundler": "^1.8.1",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4"
+    "react-dom": "^16.3.2"
   },
   "author": "KingCosmic <KingCosmicDev@gmail.com>",
   "dependencies": {

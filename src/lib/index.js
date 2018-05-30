@@ -1,14 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './styles.css';
-
-const pos = {
-  'top': styles.top,
-  'bottom': styles.bottom,
-  'right': styles.right,
-  'left': styles.left
-}
+import './styles.css';
 
 class Tooltip extends Component {
   constructor(props) {
@@ -67,7 +60,7 @@ class Tooltip extends Component {
 
     return (
       <div
-        className={styles.tooltip}
+        className='tooltip'
         onClick={(type === 'click') ? () => click() : null}
         onMouseEnter={(type === 'hover' ? () => hoverOn() : null)}
         onMouseLeave={(type === 'hover' ? () => hoverOff() : null)}
@@ -77,7 +70,7 @@ class Tooltip extends Component {
 
         {
           state.visible &&
-          <span className={`${styles.tooltipText} ${pos[props.pos]}`}>{props.content}</span>
+          <span className={`tooltipText ${props.pos}`}>{props.content}</span>
         }
       </div>
     )

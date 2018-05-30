@@ -1,16 +1,16 @@
-import React from "react";
-import { render } from "react-dom";
-import Tooltip from "../lib";
-import styles from './styles.css';
+import React from 'react';
+import { render } from 'react-dom';
+import Tooltip from '../lib';
+import './styles.css';
 
 const Demo = () => {
   return (
-    <div className={styles.container}>
+    <div className='container'>
       <h1>Demo with examples of the component</h1>
 
       <h1> default </h1>
 
-      <div className={styles.defaultContainer}>
+      <div className='defaultContainer'>
         <Tooltip content='top'>
           <a>top</a>
         </Tooltip>
@@ -41,4 +41,4 @@ const Demo = () => {
   );
 }
 
-render(<Demo />, document.getElementById("app"));
+render(<Demo />, document.getElementById('app'));
