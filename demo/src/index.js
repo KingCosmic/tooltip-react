@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Tooltip from '../lib';
+import Tooltip from '../../src';
 import './styles.css';
 
 const Demo = () => {
@@ -41,4 +41,4 @@ const Demo = () => {
   );
 }
 
-render(<Demo />, document.getElementById('app'));
+render(<Demo />, document.getElementById('demo'));

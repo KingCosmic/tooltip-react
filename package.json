@@ -1,33 +1,37 @@
 {
   "name": "kc-tooltip",
-  "version": "0.1.7",
-  "description": "Component for easily showing customizable tooltips",
+  "version": "1.0.0",
+  "description": "kc-tooltip React component",
   "main": "lib/index.js",
-  "scripts": {
-    "start": "parcel src/docs/index.html -d docs",
-    "build-docs": "parcel build src/docs/index.html -d docs",
-    "build-lib": "parcel build src/lib/index.js -d lib",
-    "build": "npm run build-docs && npm run build-lib",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d docs"
-  },
-  "keywords": [
-    "react",
-    "tooltip"
+  "module": "es/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
   ],
-  "license": "MIT",
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server"
+  },
+  "dependencies": {},
   "peerDependencies": {
-    "react": "^15.3.0 || ^16.2.0",
-    "react-dom": "^15.3.0 || ^16.2.0"
+    "react": "16.x"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0",
-    "parcel-bundler": "^1.8.1",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "nwb": "0.21.x",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
   },
-  "author": "KingCosmic <KingCosmicDev@gmail.com>",
-  "dependencies": {
-    "prop-types": "^15.6.1"
-  }
+  "author": "",
+  "homepage": "",
+  "license": "MIT",
+  "repository": "",
+  "keywords": [
+    "react-component"
+  ]
 }

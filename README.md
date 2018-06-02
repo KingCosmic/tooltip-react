@@ -1,22 +1,16 @@
-# What is this?
+# kc-tooltip
 
-Its a simple tooltip component since the ones I found couldn't do what I need
+[![Travis][build-badge]][build]
+[![npm package][npm-badge]][npm]
+[![Coveralls][coveralls-badge]][coveralls]
 
-https://kingcosmic.github.io/tooltip-react/
+Describe kc-tooltip here.
 
-# Example
+[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
+[build]: https://travis-ci.org/user/repo
 
-```js
-import React from 'react';
-import Tooltip from 'kc-tooltip';
+[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
+[npm]: https://www.npmjs.org/package/npm-package
 
-const Example = (props) => {
-  return (
-    <Tooltip content='Tooltip content'>
-      <a>Place what you want the tooltip around here</a>
-    </Tooltip>
-  )
-}
-
-export default Example;
-```
+[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/user/repo
